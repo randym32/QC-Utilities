@@ -50,6 +50,12 @@
  The help anchor that can be used to create a help button to accompany the error when it's displayed to the user.
  */
 
+static void add(NSMutableDictionary* d, NSString* key, NSObject* value)
+{
+    if (value && ![@"" isEqual:value] && [NSNull null] != value)
+        d[key] = value;
+}
+
 NSArray* NSError2Struct(NSError* e)
 {
     if (!e)
@@ -57,17 +63,16 @@ NSArray* NSError2Struct(NSError* e)
     NSMutableArray* stack = [[NSMutableArray alloc] init];
     while (e)
     {
-        [stack insertObject:
-                // See if there was an error message
-                @{
-                    @"localizedDescription"       : _n([e localizedDescription]),
-                    @"localizedFailureReason"     : _n([e localizedFailureReason]),
-                    @"localizedRecoverySuggestion": _n([e localizedRecoverySuggestion]),
-                    @"localizedRecoveryOptions"   : _n([e localizedRecoveryOptions]),
-                    @"recoveryAttempter"          : _n([e recoveryAttempter]),
-                    @"helpAnchor"                 : _n([e helpAnchor])
-                 }
+        NSMutableDictionary* tmp = [[NSMutableDictionary alloc] init];
+        // See if there was an error message
+        add(tmp, @"localizedDescription",       [e localizedDescription]);
+        add(tmp, @"localizedFailureReason",     [e localizedFailureReason]);
+        add(tmp, @"localizedRecoverySuggestion",[e localizedRecoverySuggestion]);
+        add(tmp, @"localizedRecoveryOptions",   [e localizedRecoveryOptions]);
+        add(tmp, @"recoveryAttempter",          [e recoveryAttempter]);
+        add(tmp, @"helpAnchor",                 [e helpAnchor]);
          
+        [stack insertObject: tmp
                     atIndex: 0];
         e= [[e userInfo] objectForKey:NSUnderlyingErrorKey];
     }

@@ -111,7 +111,18 @@ static NSDictionary* portAttributes;
           atTime:(NSTimeInterval)time
    withArguments:(NSDictionary*)arguments
 {
+    // Check for any changes
+    if (![self didValueForInputKeyChange:@"inputURL"] && time )
+        return YES;
+
+//    NSLog(@"rcm %@ cwd: %@", self.inputURL,
+//          [[NSFileManager defaultManager] currentDirectoryPath]);
+    
+    // create a URL
     NSURL* url = [NSURL URLWithString:self.inputURL];
+    // If it is just a file name, we have to try a backup method
+    if (!url)
+        url = [NSURL fileURLWithPath:self.inputURL];
     // Update our results
     NSURL* tmp =  [url standardizedURL];
     self . outputStandardizedURL = tmp?[tmp description] :@"";
@@ -127,7 +138,8 @@ static NSDictionary* portAttributes;
                 // The same as path if baseURL is nil
                 @"relativePath"     : _n([url relativePath]),
                 @"base"             : _n([url baseURL]),
-                @"absolute"         : _n([url absoluteString])
+                @"absolute"         : _n([url absoluteString]),
+                @"extension"        : _n([url pathExtension])
              };
         // Check for error's accessingit
         NSError* e= nil;
@@ -146,6 +158,7 @@ static NSDictionary* portAttributes;
                 // The same as path if baseURL is nil
                 @"relativePath"     : _n([url relativePath]),
                 @"base"             : _n([[url baseURL] description]),
+                @"extension"        : _n([url pathExtension]),
                 @"scheme"           : _n([url scheme]),
                 @"resourceSpecifier": _n([url resourceSpecifier]),
             

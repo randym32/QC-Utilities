@@ -126,9 +126,15 @@ static NSDictionary* portAttributes;
         state = 1;
 
         e = nil;
-        data = [NSData dataWithContentsOfURL: [NSURL URLWithString: path]
-                                     options: 0
-                                       error:&e];
+        NSURL* url =[NSURL URLWithString: path];
+        // If it is just a file name, we have to try a backup method
+        if (!url)
+            url = [NSURL fileURLWithPath:self.inputURL];
+        // We have to do this as the path may not be a valid URL and return a null
+        if (url)
+            data = [NSData dataWithContentsOfURL: url
+                                         options: 0
+                                           error:&e];
 
         // Check to see if there is any data
         if (!data)
@@ -190,13 +196,18 @@ static NSDictionary* portAttributes;
         self . outputReady=false;
         // This doesn't use the main queue cuz some URL connections will cause the QC to stop responding
         // and give a beach ball of death
-        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void)
-            {
-                @autoreleasepool
-                {
-                    [self load:url];
-                }
-            });
+        if (!url || [@"" isEqualToString: url])
+        {
+            state = 3;
+        }
+        else
+            dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void)
+                           {
+                               @autoreleasepool
+                               {
+                                   [self load:url];
+                               }
+                           });
         return YES;
     }
 
