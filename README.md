@@ -47,9 +47,9 @@ Exception (Unhandled) Reporter
 
 Captures errant UNIX signals and unhandled framework exceptions.
 
-|         |       |      | |
-|---------|-------|------|-|
-|*Inputs* | _None_|      | |
+|         | Name  | Type | Description |
+|---------|-------|------|-------------|
+|*Inputs* | _None_|      |             |
 |*Outputs*| error | array| An array of exceptions; the most recent first |
 
 Each exception is a structure.  Each structure has the following fields:
@@ -68,6 +68,8 @@ Hex To Color
 
 Converts a hex string to a color.
 
+|         | Name          | Type   | Description |
+|---------|---------------|--------|-------------|
 |*Inputs* | hex RGB       | string | The RGB hex code for the color                                                 |
 |         | default Color | color  | The color to employ if "hex RGB" is empty or can't be converted to a hex color |
 |*Outputs*| color         | color  | The color, from _hex RGB_ if possible, from _default Color_ if neccessary      |
@@ -78,9 +80,11 @@ Is String Bound
 
 Checks to see if a string is null or empty.
 
-|*Inputs* | input    | string | The input string                                     |
-|*Outputs*| is free  | boolean| True if the string is null or empty; false otherwise |
-|         | is bound | boolean| False if the string is null or empty; true otherwise |
+|         | Name          | Type   | Description |
+|---------|---------------|--------|-------------|
+|*Inputs* | input         | string | The input string                                     |
+|*Outputs*| is free       | boolean| True if the string is null or empty; false otherwise |
+|         | is bound      | boolean| False if the string is null or empty; true otherwise |
 
 
 
@@ -89,9 +93,11 @@ Is Structure Bound
 
 Checks to see if a structure is null or empty.
 
-|*Inputs* | input    | structure | The input structure                                     |
-|*Outputs*| is free  | boolean   | True if the structure is null or empty; false otherwise |
-|         | is bound | boolean   | False if the structure is null or empty; true otherwise |
+|         | Name          | Type      | Description |
+|---------|---------------|-----------|-------------|
+|*Inputs* | input         | structure | The input structure                                     |
+|*Outputs*| is free       | boolean   | True if the structure is null or empty; false otherwise |
+|         | is bound      | boolean   | False if the structure is null or empty; true otherwise |
 
 
 JSON Converter
@@ -99,13 +105,15 @@ JSON Converter
 
 Converts a JSON formated text string into  a structure.
 
+|         | Name            | Type      | Description |
+|---------|-----------------|-----------|-------------|
 |*Inputs* | JSON data       | string    | The JSON formatted text string                                 |
 |*Outputs*| output          | structure | The structure specified in the JSON file (empty on error)      |
 |         | error           | structure | An array of [error structures][e] (see below) with the most underlying one first |
 |         | ready           | boolean   | True if the structure is loaded and was read without error; false otherwise |
 
-# The data is interpreted as a JSON formatted text.  If this produced an error, it is set in _error_
-# Otherwise _output_ is set with the JSON structure and _ready_ is set to true.
+1. The data is interpreted as a JSON formatted text.  If this produced an error, it is set in _error_
+2. Otherwise _output_ is set with the JSON structure and _ready_ is set to true.
 
 The JSON conversion is done in the background, using a Grand Central Dispatch Queue.
 Quartz Composer does other things while the data is converted.  To let QC know that the loading is done, the patch uses a
@@ -118,18 +126,20 @@ String Importer
 
 Imports a structure from a JSON formated file
 
+|         | Name            | Type      | Description |
+|---------|-----------------|-----------|-------------|
 |*Inputs* |File path or URL for string| string    | The local file path for the file or the remote URL for the file|
 |*Outputs*| string          | string    | The structure specified in the JSON file (empty on error)      |
-|         | error           | structure | An array of [error structures][e] (see below) with the most underlying one first |
+|         | error           | structure | An array of error structures (see below) with the most underlying one first |
 |         | ready           | boolean   | True if the structure is loaded and was read without error; false otherwise |
 
 
 
 The operations:
-# It first assumes that it was given a file path and tries to load from that
-# If that doesn't work, it assumes that it was given an URL and tries to load from that.
-# If neither work, the error structure is populated
-# Otherwise, the output _string_ is set and _ready_ is set to true
+1. It first assumes that it was given a file path and tries to load from that
+2. If that doesn't work, it assumes that it was given an URL and tries to load from that.
+3. If neither work, the error structure is populated
+4. Otherwise, the output _string_ is set and _ready_ is set to true
 
 
 The loading of the string is done in the background, using a Grand Central Dispatch Queue.
@@ -137,13 +147,13 @@ Quartz Composer does other things while the data loads.  To let QC know that the
 timebase to tell QC to periodically poll us, and get the results from the background thread.  The interval is also
 shortened if the input to the patch changes.
 
-[e]Error Structure
+Error Structure
 ---------------
 
 The error structure may include the following fields (text borrowed from Apple Documentation):
 
 | Field                     | Description                 |
-|+-------------------------+|+---------------------------+|
+|---------------------------|-----------------------------|
 |localizedDescription       |The primary user-presentable message for the error. In the absence of a custom error string, the manufactured one might not be suitable for presentation to the user, but can be used in logs or debugging.|
 |localizedFailureReason     |A complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).|
 |localizedRecoverySuggestion|The string that can be displayed as the "informative" (aka "secondary") message.|
