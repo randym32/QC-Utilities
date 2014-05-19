@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleGetInfoString</key>
+	<string>QC Utils version 1.0</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.blackwood-designs.quartzcomposer.utils</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>QCPlugInClasses</key>
+	<array>
+		<string>ExceptionUnhandled</string>
+		<string>HexToColor</string>
+		<string>IsStringBound</string>
+		<string>IsStructureBound</string>
+		<string>JSONConvert</string>
+		<string>MergeStructure</string>
+		<string>StringImport</string>
+	</array>
+</dict>
+</plist>

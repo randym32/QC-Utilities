@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		233E2C640A83C768005A62DF /* Build & Copy */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 233E2D890A83C7AC005A62DF /* Build configuration list for PBXAggregateTarget "Build & Copy" */;
+			buildPhases = (
+				233E2C690A83C783005A62DF /* ShellScript */,
+			);
+			dependencies = (
+				233E2C660A83C76D005A62DF /* PBXTargetDependency */,
+			);
+			name = "Build & Copy";
+			productName = "Build & Install";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		16BA95420A7EB2EB001E4983 /* MergeStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BA95410A7EB2EB001E4983 /* MergeStructure.m */; };
+		16BA96310A7EB9AC001E4983 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BA96300A7EB9AC001E4983 /* Quartz.framework */; };
+		3D0123531926761300B7AC9B /* JSONConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0123521926761300B7AC9B /* JSONConvert.m */; };
+		3D0123551926862800B7AC9B /* Error2Structure.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0123541926862800B7AC9B /* Error2Structure.m */; };
+		3D12F38718AF0C1C00E1B17C /* HexToColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D12F38618AF0C1C00E1B17C /* HexToColor.m */; };
+		3D12F38A18AFB62900E1B17C /* StringImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D12F38918AFB62900E1B17C /* StringImport.m */; };
+		3D12F38D18B113A600E1B17C /* IsBound.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D12F38C18B113A600E1B17C /* IsBound.m */; };
+		3D5353971925114000CF6376 /* ExceptionHandling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5353961925114000CF6376 /* ExceptionHandling.framework */; };
+		3D53539A1925198E00CF6376 /* ExceptionUnhandled.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5353991925198E00CF6376 /* ExceptionUnhandled.m */; };
+		3DA18A621926505B00D626B5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3DA18A601926505B00D626B5 /* LICENSE */; };
+		3DA18A631926505B00D626B5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3DA18A611926505B00D626B5 /* README.md */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		233E2C650A83C76D005A62DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = iPatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		16AA5C440A7EEE7300888E31 /* QC Utilities_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "QC Utilities_Prefix.pch"; sourceTree = "<group>"; };
+		16BA95400A7EB2EB001E4983 /* MergeStructure.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MergeStructure.h; sourceTree = "<group>"; };
+		16BA95410A7EB2EB001E4983 /* MergeStructure.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MergeStructure.m; sourceTree = "<group>"; };
+		16BA96300A7EB9AC001E4983 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
+		3D0123511926761300B7AC9B /* JSONConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONConvert.h; sourceTree = "<group>"; };
+		3D0123521926761300B7AC9B /* JSONConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONConvert.m; sourceTree = "<group>"; };
+		3D0123541926862800B7AC9B /* Error2Structure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Error2Structure.m; sourceTree = "<group>"; };
+		3D0123561926865800B7AC9B /* QCUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCUtils.h; sourceTree = "<group>"; };
+		3D12F38518AF0C1C00E1B17C /* HexToColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexToColor.h; sourceTree = "<group>"; };
+		3D12F38618AF0C1C00E1B17C /* HexToColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexToColor.m; sourceTree = "<group>"; };
+		3D12F38818AFB62900E1B17C /* StringImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringImport.h; sourceTree = "<group>"; };
+		3D12F38918AFB62900E1B17C /* StringImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringImport.m; sourceTree = "<group>"; };
+		3D12F38B18B113A600E1B17C /* IsBound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsBound.h; sourceTree = "<group>"; };
+		3D12F38C18B113A600E1B17C /* IsBound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsBound.m; sourceTree = "<group>"; };
+		3D5353961925114000CF6376 /* ExceptionHandling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExceptionHandling.framework; path = /System/Library/Frameworks/ExceptionHandling.framework; sourceTree = "<absolute>"; };
+		3D5353981925198E00CF6376 /* ExceptionUnhandled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExceptionUnhandled.h; sourceTree = "<group>"; };
+		3D5353991925198E00CF6376 /* ExceptionUnhandled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionUnhandled.m; sourceTree = "<group>"; };
+		3DA18A601926505B00D626B5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3DA18A611926505B00D626B5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* QC Utilities.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QC Utilities.plugin"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				3D5353971925114000CF6376 /* ExceptionHandling.framework in Frameworks */,
+				16BA96310A7EB9AC001E4983 /* Quartz.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* Quartz Composer Plug In */ = {
+			isa = PBXGroup;
+			children = (
+				3DA18A601926505B00D626B5 /* LICENSE */,
+				3DA18A611926505B00D626B5 /* README.md */,
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = "Quartz Composer Plug In";
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D5353961925114000CF6376 /* ExceptionHandling.framework */,
+				16BA96300A7EB9AC001E4983 /* Quartz.framework */,
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3D0123561926865800B7AC9B /* QCUtils.h */,
+				3D0123541926862800B7AC9B /* Error2Structure.m */,
+				3D5353981925198E00CF6376 /* ExceptionUnhandled.h */,
+				3D5353991925198E00CF6376 /* ExceptionUnhandled.m */,
+				3D12F38518AF0C1C00E1B17C /* HexToColor.h */,
+				3D12F38618AF0C1C00E1B17C /* HexToColor.m */,
+				3D12F38B18B113A600E1B17C /* IsBound.h */,
+				3D12F38C18B113A600E1B17C /* IsBound.m */,
+				3D0123511926761300B7AC9B /* JSONConvert.h */,
+				3D0123521926761300B7AC9B /* JSONConvert.m */,
+				16BA95400A7EB2EB001E4983 /* MergeStructure.h */,
+				16BA95410A7EB2EB001E4983 /* MergeStructure.m */,
+				3D12F38818AFB62900E1B17C /* StringImport.h */,
+				3D12F38918AFB62900E1B17C /* StringImport.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* QC Utilities.plugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				16AA5C440A7EEE7300888E31 /* QC Utilities_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* QC Utilities */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "QC Utilities" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QC Utilities";
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = "Quartz Composer Plug In";
+			productReference = 8D5B49B6048680CD000E48DA /* QC Utilities.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "QC Utilities" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* Quartz Composer Plug In */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* QC Utilities */,
+				233E2C640A83C768005A62DF /* Build & Copy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DA18A631926505B00D626B5 /* README.md in Resources */,
+				3DA18A621926505B00D626B5 /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		233E2C690A83C783005A62DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This shell script simply copies the built plug-in to \"/Library/Graphics/Quartz Composer Plug-Ins\" and overrides any previous version at that location\n\nrm -rf \"/Library/Graphics/Quartz Composer Plug-Ins/iPatch.plugin\"\ncp -rf \"$BUILT_PRODUCTS_DIR/iPatch.plugin\" \"/Library/Graphics/Quartz Composer Plug-Ins/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D0123551926862800B7AC9B /* Error2Structure.m in Sources */,
+				3D12F38D18B113A600E1B17C /* IsBound.m in Sources */,
+				3D0123531926761300B7AC9B /* JSONConvert.m in Sources */,
+				3D12F38718AF0C1C00E1B17C /* HexToColor.m in Sources */,
+				16BA95420A7EB2EB001E4983 /* MergeStructure.m in Sources */,
+				3D53539A1925198E00CF6376 /* ExceptionUnhandled.m in Sources */,
+				3D12F38A18AFB62900E1B17C /* StringImport.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		233E2C660A83C76D005A62DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D5B49AC048680CD000E48DA /* QC Utilities */;
+			targetProxy = 233E2C650A83C76D005A62DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QC Utilities_Prefix.pch";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "/Library/Graphics/Quartz Composer Plug-Ins";
+				PRODUCT_NAME = "QC Utilities";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "";
+				WRAPPER_EXTENSION = plugin;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DEB913C08733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QC Utilities_Prefix.pch";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "/Library/Graphics/Quartz Composer Plug-Ins";
+				PRODUCT_NAME = "QC Utilities";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Release;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.8;
+			};
+			name = Debug;
+		};
+		1DEB914008733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				SDKROOT = macosx10.8;
+			};
+			name = Release;
+		};
+		233E2D8A0A83C7AC005A62DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build & Install";
+			};
+			name = Debug;
+		};
+		233E2D8B0A83C7AC005A62DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "Build & Install";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "QC Utilities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+				1DEB913C08733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "QC Utilities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		233E2D890A83C7AC005A62DF /* Build configuration list for PBXAggregateTarget "Build & Copy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				233E2D8A0A83C7AC005A62DF /* Debug */,
+				233E2D8B0A83C7AC005A62DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
