@@ -3,28 +3,28 @@ Quartz Composer Utilities
 
 This is a set of tools for Quartz Composer.
 
-* 
+
 
 Installation
 ------------
 
-# Remove the old plugin from ~/Library/Graphics/Quartz Composer Plug-Ins
-# Copy the new plugin into ~/Library/Graphics/Quartz Composer Plug-Ins
+1. Remove the old plugin from ~/Library/Graphics/Quartz Composer Plug-Ins
+2. Copy the new plugin into ~/Library/Graphics/Quartz Composer Plug-Ins
 
 
 Lessons that I have learned
 ---------------------------
 
-# A patch can't have an output called "output"
-# A patch can't have an input called "input"
-# Neither an input nor an output can be of types NSObject
-# When catching exceptions: NSLogUncaughtSystemExceptionMask catches when the framework  synthesizes a field.
+1. A patch can't have an output called "output"
+2. A patch can't have an input called "input"
+3. Neither an input nor an output can be of types NSObject
+4. When catching exceptions: NSLogUncaughtSystemExceptionMask catches when the framework  synthesizes a field.
   For example, when Quartz Composer environment synthesizes inputs/outputs.  So this exception mask shouldn't be employed
-# If you provide a structure to an input (which doesn't have a type declare, or is declared a string) Quartz Composer converts it to a string.  No way for virtual or generic types at this time.
-# Fetching any of the outputs (eg from within 'execute:atTime:withArguments:') seems to be a bad idea; it works better if they are only stored
-# Don't set any outputs in 'startExecution:' or in 'stopExecution:'
-# If using Grand Central Dispatch (eg dispatch_async) *do not use 'dispatch_get_main_queue()'*.  Quartz Composer will stop responding -- with a spinning beach ball -- if that background task block takes any time to execute.  Use 'dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)' instead
-# 'executionTimeForContext:atTime:withArguments:' is called very frequently, no matter what it returned last
+5. If you provide a structure to an input (which doesn't have a type declare, or is declared a string) Quartz Composer converts it to a string.  No way for virtual or generic types at this time.
+6. Fetching any of the outputs (eg from within 'execute:atTime:withArguments:') seems to be a bad idea; it works better if they are only stored
+7. Don't set any outputs in 'startExecution:' or in 'stopExecution:'
+8. If using Grand Central Dispatch (eg dispatch_async) *do not use 'dispatch_get_main_queue()'*.  Quartz Composer will stop responding -- with a spinning beach ball -- if that background task block takes any time to execute.  Use 'dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)' instead
+8. 'executionTimeForContext:atTime:withArguments:' is called very frequently, no matter what it returned last
 
 
 
@@ -34,7 +34,7 @@ The plugin was created using the Xcode editor running under Mac OS X 10.8.x or l
 
 Patches
 ========
-* [*Exception (Unhandled) Reporter*][1]: Captures errant UNIX signals and unhandled framework exceptions.
+* *Exception (Unhandled) Reporter*: Captures errant UNIX signals and unhandled framework exceptions.
 * *Hex To Color*: Converts a hex string to a color.
 * *Is String Bound*: Checks to see if a string is null or empty
 * *Is Structure Bound*: Checks to see if a structure is null or empty
@@ -42,18 +42,20 @@ Patches
 * *Merge Structure*: Merges two structures
 * *String Import*: Imports a structure from a JSON formatted file
 
-[1]Exception (Unhandled) Reporter
+Exception (Unhandled) Reporter
 ------------------------------
 
 Captures errant UNIX signals and unhandled framework exceptions.
 
-|*Inputs* | _None_| | |
+|         |       |      | |
+|---------|-------|------|-|
+|*Inputs* | _None_|      | |
 |*Outputs*| error | array| An array of exceptions; the most recent first |
 
 Each exception is a structure.  Each structure has the following fields:
 
 | Field   | Description    |
-|+-------+|+--------------+|
+|---------|----------------|
 | name    | The name of the exception as provided by Objective-C     |
 | reason  | The reason for the exception, as provided by Objective-C |
 |callStack| The traceback / call stack of where the exception occurred; does not include line numbers at this time|
