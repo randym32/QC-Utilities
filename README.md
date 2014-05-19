@@ -34,13 +34,28 @@ The plugin was created using the Xcode editor running under Mac OS X 10.8.x or l
 
 Patches
 ========
+
+
 * *Exception (Unhandled) Reporter*: Captures errant UNIX signals and unhandled framework exceptions.
 * *Hex To Color*: Converts a hex string to a color.
+* *Host Reachability*: Checks to see if a host is reachable.
 * *Is String Bound*: Checks to see if a string is null or empty
 * *Is Structure Bound*: Checks to see if a structure is null or empty
-* *JSON Covert*: Convert a string form of a JSON file to a structure
+* *JSON Convert*: Convert a string form of a JSON file to a structure
 * *Merge Structure*: Merges two structures
+* *Network Reachability*: Checks to see if the local network is reachable
 * *String Import*: Imports a structure from a JSON formatted file
+* *URL Parser*: Parse a URL into its parts
+* *WiFi Reachability*: Checks to see if the local WiFi network is reachable
+
+|What|Patches|
+|-:|-|
+|**Devices, Hardware**|Network Reachability|
+|**Error Management**|Exception (Unhandled) Reporter, Host Reachability, Network Reachability, URL Parser|
+|**Network**   |String Import, URL Parser|
+|**Strings**   |Hex To Color, Is String Bound, String Import|
+|**Structures**|Is Structure Bound, Merge Structure, URL Structure|
+
 
 Exception (Unhandled) Reporter
 ------------------------------
@@ -73,6 +88,18 @@ Converts a hex string to a color.
 |**Inputs** | hex RGB       | string | The RGB hex code for the color                                                 |
 |           | default Color | color  | The color to employ if "hex RGB" is empty or can't be converted to a hex color |
 |**Outputs**| color         | color  | The color, from _hex RGB_ if possible, from _default Color_ if neccessary      |
+
+
+Host Reachability
+------------------
+Checks to see if a host is reachable.  See also *Network Reachability*.
+
+|           | Name                  | Type   | Description |
+|----------:|-----------------------|--------|-------------|
+|**Inputs** | Host name or IPAddress| string | The host name or IP address of the machine we will are interested in contacting.|
+|**Outputs**| connection required   | boolean| True if the network will be need to enabled.  |
+|           | reachable             | boolean| True if the host is reachable.                |
+|           | reachable via WWAN    | boolean| True if on an iPhone and can reach using cellular data services. |
 
 
 Is String Bound
@@ -121,6 +148,19 @@ timebase to tell QC to periodically poll us, and get the results from the backgr
 shortened if the input to the patch changes.
 
 
+Network Reachability
+--------------------
+Checks to see if a network is reachable.  See also *Host Reachability*, *WiFi Reachability*
+
+|           | Name                  | Type   | Description |
+|----------:|-----------------------|--------|-------------|
+|**Inputs** | *none*                |        |             |
+|**Outputs**| connection required   | boolean| True if the network will be need to enabled.  |
+|           | reachable             | boolean| True if the host is reachable.                |
+|           | reachable via WWAN    | boolean| True if on an iPhone and can reach using cellular data services. |
+
+
+
 String Importer
 ---------------
 
@@ -129,7 +169,7 @@ Imports a structure from a JSON formated file
 |           | Name            | Type      | Description |
 |----------:|-----------------|-----------|-------------|
 |**Inputs** |File path or URL for string| string    | The local file path for the file or the remote URL for the file|
-|**Outputs**| string          | string    | The structure specified in the JSON file (empty on error)      |
+|**Outputs**| string          | string    | The text file specified by the path or URL                                  |
 |           | error           | structure | An array of error structures (see below) with the most underlying one first |
 |           | ready           | boolean   | True if the structure is loaded and was read without error; false otherwise |
 
@@ -147,6 +187,56 @@ The loading of the string is done in the background, using a Grand Central Dispa
 Quartz Composer does other things while the data loads.  To let QC know that the loading is done, the patch uses a
 timebase to tell QC to periodically poll us, and get the results from the background thread.  The interval is also
 shortened if the input to the patch changes.
+
+
+URL Parser
+----------
+Parse a URL into its parts
+
+|           | Name            | Type      | Description |
+|----------:|-----------------|-----------|-------------|
+|**Inputs** |File path or URL | string    | The local file path for the file or the remote URL for the file|
+|**Outputs**| output          | structure | The pieces of the URL (described below)      |
+|           | error           | structure | An error structures (see below) if is a file but can't be accessed. |
+|           | is file         | boolean   | True if the URL specifies a local file; false otherwise |
+|           | standardized URL| string    | The URL in a standardized format. |
+
+
+The structure of the URL includes:
+
+| Field                     | Description                 |
+|---------------------------|-----------------------------|
+| absolute                  |                             |
+| absolute URL              |                             |
+| base                      |                             |
+| fragment                  |                             |
+| host                      |                             |
+| parameters                |                             |
+| password                  |                             |
+| path                      |                             |
+| port                      |                             |
+| query                     |                             |
+| relative                  | The relative portion of a URL.  If 'base' is nil this is the same as absolute|
+| relativePath              | The same as path if base is nil|
+| resourceSpecifier         |                             |
+| scheme                    |                             |
+| user                      |                             |
+
+
+
+WiFi Reachability
+--------------------
+Checks to see if a network is reachable.  See also *Host Reachability*, *Network Reachability*
+
+|           | Name                  | Type   | Description |
+|----------:|-----------------------|--------|-------------|
+|**Inputs** | *none*                |        |             |
+|**Outputs**| connection required   | boolean| True if the network will be need to enabled.  |
+|           | reachable             | boolean| True if the host is reachable.                |
+|           | reachable via WWAN    | boolean| True if on an iPhone and can reach using cellular data services. |
+
+
+
 
 Error Structure
 ---------------

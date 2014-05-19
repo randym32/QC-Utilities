@@ -22,11 +22,15 @@
 	<array>
 		<string>ExceptionUnhandled</string>
 		<string>HexToColor</string>
+		<string>HostReachable</string>
 		<string>IsStringBound</string>
 		<string>IsStructureBound</string>
 		<string>JSONConvert</string>
 		<string>MergeStructure</string>
+		<string>NetReachable</string>
 		<string>StringImport</string>
+		<string>URLParse</string>
+		<string>WiFiReachable</string>
 	</array>
 </dict>
 </plist>

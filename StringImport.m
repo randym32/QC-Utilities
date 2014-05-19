@@ -151,8 +151,7 @@ static NSDictionary* portAttributes;
 }
 
 
-/*
-    This is used to tell QC how frequently to poll us for updates; it depends on whether are waiting for
+/**@brief Tell QC how frequently to poll us for updates; it depends on whether are waiting for
     for results from the network
  */
 - (NSTimeInterval) executionTimeForContext:(id<QCPlugInContext>)context
@@ -168,8 +167,10 @@ static NSDictionary* portAttributes;
     return 100000000.0;
 }
 
-/**
-     This method is called by Quartz Composer whenever the plug-in needs to recompute its result: retrieve the input string and compute the output string
+/** @brief This method is called by Quartz Composer whenever the plug-in needs to recompute its result
+    @param context
+    @param time
+    @param arguments
  */
 - (BOOL) execute:(id<QCPlugInContext>)context
           atTime:(NSTimeInterval)time
