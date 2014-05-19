@@ -31,6 +31,8 @@
 		<string>StringImport</string>
 		<string>URLParse</string>
 		<string>WiFiReachable</string>
+		<string>WLAN</string>
+		<string>WLANs</string>
 	</array>
 </dict>
 </plist>
