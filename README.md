@@ -25,6 +25,7 @@ Lessons that I have learned
 7. Don't set any outputs in 'startExecution:' or in 'stopExecution:'
 8. If using Grand Central Dispatch (eg dispatch_async) *do not use 'dispatch_get_main_queue()'*.  Quartz Composer will stop responding -- with a spinning beach ball -- if that background task block takes any time to execute.  Use 'dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)' instead
 8. 'executionTimeForContext:atTime:withArguments:' is called very frequently, no matter what it returned last
+9. [NSURL URLWithString:] can return a NULL; so there is need to check for that and fall back to [NSURL fileURLWithPath:]
 
 
 
