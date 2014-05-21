@@ -30,18 +30,18 @@
 
 /*
  The structure is defined as:
- localizedDescription.
- The primary user-presentable message for the error... In the absence of a custom error string, the manufactured one might not be suitable for presentation to the user, but can be used in logs or debugging.
+ description.
+ The primary localized, user-presentable message for the error... In the absence of a custom error string, the manufactured one might not be suitable for presentation to the user, but can be used in logs or debugging.
  
- localizedFailureReason
- A complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).
+ failureReason
+ A localized, complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).
  
  
- localizedRecoverySuggestion
- The string that can be displayed as the "informative" (aka "secondary") message on an alert panel.
+ recoverySuggestion
+ The localized string that can be displayed as the "informative" (aka "secondary") message on an alert panel.
  
- localizedRecoveryOptions
- Titles of buttons that are appropriate for displaying in an alert. These should match the string provided as a part of localizedRecoverySuggestion.  The first string would be the title of the right-most and default button, the second one next to it, and so on. If used in an alert the corresponding default return values are NSAlertFirstButtonReturn + n. Default implementation of this will pick up the value of the NSLocalizedRecoveryOptionsErrorKey from the userInfo dictionary.  nil return usually implies no special suggestion, which would imply a single "OK" button.
+ recoveryOptions
+ Localized titles of buttons that are appropriate for displaying in an alert. These should match the string provided as a part of localizedRecoverySuggestion.  The first string would be the title of the right-most and default button, the second one next to it, and so on. If used in an alert the corresponding default return values are NSAlertFirstButtonReturn + n. Default implementation of this will pick up the value of the NSLocalizedRecoveryOptionsErrorKey from the userInfo dictionary.  nil return usually implies no special suggestion, which would imply a single "OK" button.
  
  recoveryAttempter
  An object that conforms to the NSErrorRecoveryAttempting informal protocol. The recovery attempter must be an object that can correctly interpret an index into the array returned by -localizedRecoveryOptions. The default implementation of this method merely returns [[self userInfo] objectForKey:NSRecoveryAttempterErrorKey].
@@ -50,7 +50,7 @@
  The help anchor that can be used to create a help button to accompany the error when it's displayed to the user.
  */
 
-static void add(NSMutableDictionary* d, NSString* key, NSObject* value)
+void add(NSMutableDictionary* d, NSString* key, NSObject* value)
 {
     if (value && ![@"" isEqual:value] && [NSNull null] != value)
         d[key] = value;
@@ -65,12 +65,12 @@ NSArray* NSError2Struct(NSError* e)
     {
         NSMutableDictionary* tmp = [[NSMutableDictionary alloc] init];
         // See if there was an error message
-        add(tmp, @"localizedDescription",       [e localizedDescription]);
-        add(tmp, @"localizedFailureReason",     [e localizedFailureReason]);
-        add(tmp, @"localizedRecoverySuggestion",[e localizedRecoverySuggestion]);
-        add(tmp, @"localizedRecoveryOptions",   [e localizedRecoveryOptions]);
-        add(tmp, @"recoveryAttempter",          [e recoveryAttempter]);
-        add(tmp, @"helpAnchor",                 [e helpAnchor]);
+        add(tmp, @"description",       [e localizedDescription]);
+        add(tmp, @"failureReason",     [e localizedFailureReason]);
+        add(tmp, @"recoverySuggestion",[e localizedRecoverySuggestion]);
+        add(tmp, @"recoveryOptions",   [e localizedRecoveryOptions]);
+        add(tmp, @"recoveryAttempter", [e recoveryAttempter]);
+        add(tmp, @"helpAnchor",        [e helpAnchor]);
          
         [stack insertObject: tmp
                     atIndex: 0];
