@@ -40,3 +40,5 @@ extern NSArray* NSError2Struct(NSError* e);
 
 /** A procedure to set up the hook into the exception handling system */
 extern void RegisterExceptionHandler(void);
+
+extern void add(NSMutableDictionary* d, NSString* key, NSObject* value);
