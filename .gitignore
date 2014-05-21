@@ -1,2 +1,14 @@
 
 *.xcuserstate
+
+*.mode1v3
+
+BW QC Utilities.xcodeproj/xcuserdata/randym.xcuserdatad/xcschemes/xcschememanagement.plist
+
+BW QC Utilities.xcodeproj/xcuserdata/randym.xcuserdatad/xcschemes/QCUtils Patch.xcscheme
+
+BW QC Utilities.xcodeproj/xcuserdata/randym.xcuserdatad/xcschemes/Build & Copy.xcscheme
+
+BW QC Utilities.xcodeproj/project.xcworkspace/xcuserdata/randym.xcuserdatad/WorkspaceSettings.xcsettings
+
+BW QC Utilities.xcodeproj/xcuserdata/randym.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
