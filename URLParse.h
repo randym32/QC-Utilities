@@ -33,7 +33,7 @@
  */
 @property(assign) NSString* inputURL;
 
-/* If the URL conforms to rfc 1808 (the most common form of URL), the following accessors will return the various components; otherwise they return nil.  The litmus test for conformance is as recommended in RFC 1808 - whether the first two characters of resourceSpecifier is @"//".  In all cases, they return the component's value after resolving the receiver against its base URL.
+/* If the URL conforms to rfc 1808 (the most common form of URL), the following accessors will return the various components; otherwise they return nil.  The litmus test for conformance is as recommended in RFC 1808 - whether the first two characters of resourceSpecifier is "//".  In all cases, they return the component's value after resolving the receiver against its base URL.
  */
 @property(assign) NSDictionary* outputStructure;
 
