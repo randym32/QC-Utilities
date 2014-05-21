@@ -32,10 +32,17 @@
 		3D012388192A529F00B7AC9B /* URLParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D012387192A529F00B7AC9B /* URLParse.m */; };
 		3D01238A192A9D2900B7AC9B /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D012389192A9D2900B7AC9B /* CoreWLAN.framework */; };
 		3D01238D192A9D7D00B7AC9B /* WLANs.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D01238C192A9D7D00B7AC9B /* WLANs.m */; };
-		3D012390192A9F1900B7AC9B /* WLAN.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D01238F192A9F1900B7AC9B /* WLAN.m */; };
+		3D012390192A9F1900B7AC9B /* ThingInfoPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D01238F192A9F1900B7AC9B /* ThingInfoPlugin.m */; };
 		3D12F38718AF0C1C00E1B17C /* HexToColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D12F38618AF0C1C00E1B17C /* HexToColor.m */; };
 		3D12F38A18AFB62900E1B17C /* StringImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D12F38918AFB62900E1B17C /* StringImport.m */; };
 		3D12F38D18B113A600E1B17C /* IsBound.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D12F38C18B113A600E1B17C /* IsBound.m */; };
+		3D25A6C2192B8E08004BD497 /* CamerasPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D25A6C1192B8E08004BD497 /* CamerasPlugin.m */; };
+		3D25A6C5192B90B4004BD497 /* Cameras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D25A6C4192B90B4004BD497 /* Cameras.m */; };
+		3D25A6C7192B95C8004BD497 /* ImageCaptureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D25A6C6192B95C8004BD497 /* ImageCaptureCore.framework */; };
+		3D25A6CA192B965B004BD497 /* ThingInfo+Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D25A6C9192B965B004BD497 /* ThingInfo+Camera.m */; };
+		3D25A6CD192BB35B004BD497 /* ThingInfo+WLAN.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D25A6CC192BB35B004BD497 /* ThingInfo+WLAN.m */; };
+		3D25A6CF192BB4B4004BD497 /* ThingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D25A6CE192BB4B4004BD497 /* ThingInfo.m */; };
+		3D31AF3B192BF6FE009BFAFF /* Applications.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D31AF3A192BF6FE009BFAFF /* Applications.m */; };
 		3D5353971925114000CF6376 /* ExceptionHandling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5353961925114000CF6376 /* ExceptionHandling.framework */; };
 		3D53539A1925198E00CF6376 /* ExceptionUnhandled.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5353991925198E00CF6376 /* ExceptionUnhandled.m */; };
 		3DA18A621926505B00D626B5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3DA18A601926505B00D626B5 /* LICENSE */; };
@@ -55,7 +62,7 @@
 
 /* Begin PBXFileReference section */
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		16AA5C440A7EEE7300888E31 /* QC Utilities_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "QC Utilities_Prefix.pch"; sourceTree = "<group>"; };
+		16AA5C440A7EEE7300888E31 /* BW QC Utilities_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "BW QC Utilities_Prefix.pch"; sourceTree = "<group>"; };
 		16BA95400A7EB2EB001E4983 /* MergeStructure.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MergeStructure.h; sourceTree = "<group>"; };
 		16BA95410A7EB2EB001E4983 /* MergeStructure.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MergeStructure.m; sourceTree = "<group>"; };
 		16BA96300A7EB9AC001E4983 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
@@ -73,20 +80,31 @@
 		3D012389192A9D2900B7AC9B /* CoreWLAN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreWLAN.framework; path = /System/Library/Frameworks/CoreWLAN.framework; sourceTree = "<absolute>"; };
 		3D01238B192A9D7D00B7AC9B /* WLANs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLANs.h; sourceTree = "<group>"; };
 		3D01238C192A9D7D00B7AC9B /* WLANs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLANs.m; sourceTree = "<group>"; };
-		3D01238E192A9F1900B7AC9B /* WLAN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAN.h; sourceTree = "<group>"; };
-		3D01238F192A9F1900B7AC9B /* WLAN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAN.m; sourceTree = "<group>"; };
+		3D01238E192A9F1900B7AC9B /* ThingInfoPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThingInfoPlugin.h; sourceTree = "<group>"; };
+		3D01238F192A9F1900B7AC9B /* ThingInfoPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThingInfoPlugin.m; sourceTree = "<group>"; };
 		3D12F38518AF0C1C00E1B17C /* HexToColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexToColor.h; sourceTree = "<group>"; };
 		3D12F38618AF0C1C00E1B17C /* HexToColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexToColor.m; sourceTree = "<group>"; };
 		3D12F38818AFB62900E1B17C /* StringImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringImport.h; sourceTree = "<group>"; };
 		3D12F38918AFB62900E1B17C /* StringImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringImport.m; sourceTree = "<group>"; };
 		3D12F38B18B113A600E1B17C /* IsBound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsBound.h; sourceTree = "<group>"; };
 		3D12F38C18B113A600E1B17C /* IsBound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsBound.m; sourceTree = "<group>"; };
+		3D25A6C0192B8E08004BD497 /* CamerasPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamerasPlugin.h; sourceTree = "<group>"; };
+		3D25A6C1192B8E08004BD497 /* CamerasPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamerasPlugin.m; sourceTree = "<group>"; };
+		3D25A6C3192B90B4004BD497 /* Cameras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cameras.h; path = src/Cameras.h; sourceTree = "<group>"; };
+		3D25A6C4192B90B4004BD497 /* Cameras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cameras.m; path = src/Cameras.m; sourceTree = "<group>"; };
+		3D25A6C6192B95C8004BD497 /* ImageCaptureCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageCaptureCore.framework; path = ../../../../System/Library/Frameworks/ImageCaptureCore.framework; sourceTree = "<group>"; };
+		3D25A6C8192B965B004BD497 /* ThingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThingInfo.h; path = src/ThingInfo.h; sourceTree = "<group>"; };
+		3D25A6C9192B965B004BD497 /* ThingInfo+Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ThingInfo+Camera.m"; path = "src/ThingInfo+Camera.m"; sourceTree = "<group>"; };
+		3D25A6CC192BB35B004BD497 /* ThingInfo+WLAN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ThingInfo+WLAN.m"; path = "src/ThingInfo+WLAN.m"; sourceTree = "<group>"; };
+		3D25A6CE192BB4B4004BD497 /* ThingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThingInfo.m; path = src/ThingInfo.m; sourceTree = "<group>"; };
+		3D31AF39192BF6FE009BFAFF /* Applications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Applications.h; path = src/Applications.h; sourceTree = "<group>"; };
+		3D31AF3A192BF6FE009BFAFF /* Applications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Applications.m; path = src/Applications.m; sourceTree = "<group>"; };
 		3D5353961925114000CF6376 /* ExceptionHandling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExceptionHandling.framework; path = /System/Library/Frameworks/ExceptionHandling.framework; sourceTree = "<absolute>"; };
 		3D5353981925198E00CF6376 /* ExceptionUnhandled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExceptionUnhandled.h; sourceTree = "<group>"; };
 		3D5353991925198E00CF6376 /* ExceptionUnhandled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionUnhandled.m; sourceTree = "<group>"; };
 		3DA18A601926505B00D626B5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3DA18A611926505B00D626B5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		8D5B49B6048680CD000E48DA /* QC Utilities.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QC Utilities.plugin"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B6048680CD000E48DA /* BW QC Utilities.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BW QC Utilities.plugin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D25A6C7192B95C8004BD497 /* ImageCaptureCore.framework in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 				3D012382192A49D900B7AC9B /* SystemConfiguration.framework in Frameworks */,
 				3D5353971925114000CF6376 /* ExceptionHandling.framework in Frameworks */,
@@ -111,6 +130,7 @@
 			children = (
 				3DA18A601926505B00D626B5 /* LICENSE */,
 				3DA18A611926505B00D626B5 /* README.md */,
+				3D25A6BF192B8DDD004BD497 /* Connectivity Patches */,
 				08FB77AFFE84173DC02AAC07 /* Patches */,
 				3D01237B192A491100B7AC9B /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
@@ -124,6 +144,7 @@
 		089C1671FE841209C02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D25A6C6192B95C8004BD497 /* ImageCaptureCore.framework */,
 				3D012389192A9D2900B7AC9B /* CoreWLAN.framework */,
 				3D012381192A49D900B7AC9B /* SystemConfiguration.framework */,
 				3D5353961925114000CF6376 /* ExceptionHandling.framework */,
@@ -146,13 +167,13 @@
 			isa = PBXGroup;
 			children = (
 				3D0123561926865800B7AC9B /* QCUtils.h */,
+				3D25A6C0192B8E08004BD497 /* CamerasPlugin.h */,
+				3D25A6C1192B8E08004BD497 /* CamerasPlugin.m */,
 				3D0123541926862800B7AC9B /* Error2Structure.m */,
 				3D5353981925198E00CF6376 /* ExceptionUnhandled.h */,
 				3D5353991925198E00CF6376 /* ExceptionUnhandled.m */,
 				3D12F38518AF0C1C00E1B17C /* HexToColor.h */,
 				3D12F38618AF0C1C00E1B17C /* HexToColor.m */,
-				3D012383192A4F1200B7AC9B /* HostReachable.h */,
-				3D012384192A4F1200B7AC9B /* HostReachable.m */,
 				3D12F38B18B113A600E1B17C /* IsBound.h */,
 				3D12F38C18B113A600E1B17C /* IsBound.m */,
 				3D0123511926761300B7AC9B /* JSONConvert.h */,
@@ -161,12 +182,8 @@
 				16BA95410A7EB2EB001E4983 /* MergeStructure.m */,
 				3D12F38818AFB62900E1B17C /* StringImport.h */,
 				3D12F38918AFB62900E1B17C /* StringImport.m */,
-				3D012386192A529F00B7AC9B /* URLParse.h */,
-				3D012387192A529F00B7AC9B /* URLParse.m */,
-				3D01238E192A9F1900B7AC9B /* WLAN.h */,
-				3D01238F192A9F1900B7AC9B /* WLAN.m */,
-				3D01238B192A9D7D00B7AC9B /* WLANs.h */,
-				3D01238C192A9D7D00B7AC9B /* WLANs.m */,
+				3D01238E192A9F1900B7AC9B /* ThingInfoPlugin.h */,
+				3D01238F192A9F1900B7AC9B /* ThingInfoPlugin.m */,
 			);
 			name = Patches;
 			sourceTree = "<group>";
@@ -174,7 +191,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D5B49B6048680CD000E48DA /* QC Utilities.plugin */,
+				8D5B49B6048680CD000E48DA /* BW QC Utilities.plugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,7 +199,7 @@
 		32C88E010371C26100C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				16AA5C440A7EEE7300888E31 /* QC Utilities_Prefix.pch */,
+				16AA5C440A7EEE7300888E31 /* BW QC Utilities_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -192,16 +209,37 @@
 			children = (
 				3D01237C192A492900B7AC9B /* Reachability.h */,
 				3D01237D192A492900B7AC9B /* Reachability.m */,
+				3D25A6C3192B90B4004BD497 /* Cameras.h */,
+				3D25A6C4192B90B4004BD497 /* Cameras.m */,
+				3D25A6C8192B965B004BD497 /* ThingInfo.h */,
+				3D25A6CE192BB4B4004BD497 /* ThingInfo.m */,
+				3D25A6C9192B965B004BD497 /* ThingInfo+Camera.m */,
+				3D25A6CC192BB35B004BD497 /* ThingInfo+WLAN.m */,
+				3D31AF39192BF6FE009BFAFF /* Applications.h */,
+				3D31AF3A192BF6FE009BFAFF /* Applications.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		3D25A6BF192B8DDD004BD497 /* Connectivity Patches */ = {
+			isa = PBXGroup;
+			children = (
+				3D012383192A4F1200B7AC9B /* HostReachable.h */,
+				3D012384192A4F1200B7AC9B /* HostReachable.m */,
+				3D012386192A529F00B7AC9B /* URLParse.h */,
+				3D012387192A529F00B7AC9B /* URLParse.m */,
+				3D01238B192A9D7D00B7AC9B /* WLANs.h */,
+				3D01238C192A9D7D00B7AC9B /* WLANs.m */,
+			);
+			name = "Connectivity Patches";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D5B49AC048680CD000E48DA /* QC Utilities */ = {
+		8D5B49AC048680CD000E48DA /* BW QC Utilities */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "QC Utilities" */;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "BW QC Utilities" */;
 			buildPhases = (
 				8D5B49AF048680CD000E48DA /* Resources */,
 				8D5B49B1048680CD000E48DA /* Sources */,
@@ -211,10 +249,10 @@
 			);
 			dependencies = (
 			);
-			name = "QC Utilities";
+			name = "BW QC Utilities";
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = "Quartz Composer Plug In";
-			productReference = 8D5B49B6048680CD000E48DA /* QC Utilities.plugin */;
+			productReference = 8D5B49B6048680CD000E48DA /* BW QC Utilities.plugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -225,7 +263,7 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 			};
-			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "QC Utilities" */;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "BW QC Utilities" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -236,7 +274,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D5B49AC048680CD000E48DA /* QC Utilities */,
+				8D5B49AC048680CD000E48DA /* BW QC Utilities */,
 				233E2C640A83C768005A62DF /* Build & Copy */,
 			);
 		};
@@ -276,13 +314,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D0123551926862800B7AC9B /* Error2Structure.m in Sources */,
+				3D25A6CD192BB35B004BD497 /* ThingInfo+WLAN.m in Sources */,
+				3D31AF3B192BF6FE009BFAFF /* Applications.m in Sources */,
+				3D25A6CA192B965B004BD497 /* ThingInfo+Camera.m in Sources */,
 				3D12F38D18B113A600E1B17C /* IsBound.m in Sources */,
 				3D01238D192A9D7D00B7AC9B /* WLANs.m in Sources */,
 				3D01237E192A492900B7AC9B /* Reachability.m in Sources */,
 				3D0123531926761300B7AC9B /* JSONConvert.m in Sources */,
 				3D12F38718AF0C1C00E1B17C /* HexToColor.m in Sources */,
+				3D25A6C2192B8E08004BD497 /* CamerasPlugin.m in Sources */,
 				3D012388192A529F00B7AC9B /* URLParse.m in Sources */,
-				3D012390192A9F1900B7AC9B /* WLAN.m in Sources */,
+				3D25A6C5192B90B4004BD497 /* Cameras.m in Sources */,
+				3D25A6CF192BB4B4004BD497 /* ThingInfo.m in Sources */,
+				3D012390192A9F1900B7AC9B /* ThingInfoPlugin.m in Sources */,
 				3D012385192A4F1200B7AC9B /* HostReachable.m in Sources */,
 				16BA95420A7EB2EB001E4983 /* MergeStructure.m in Sources */,
 				3D53539A1925198E00CF6376 /* ExceptionUnhandled.m in Sources */,
@@ -295,7 +339,7 @@
 /* Begin PBXTargetDependency section */
 		233E2C660A83C76D005A62DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D5B49AC048680CD000E48DA /* QC Utilities */;
+			target = 8D5B49AC048680CD000E48DA /* BW QC Utilities */;
 			targetProxy = 233E2C650A83C76D005A62DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -311,10 +355,10 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QC Utilities_Prefix.pch";
+				GCC_PREFIX_HEADER = "BW QC Utilities_Prefix.pch";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "/Library/Graphics/Quartz Composer Plug-Ins";
-				PRODUCT_NAME = "QC Utilities";
+				PRODUCT_NAME = "BW QC Utilities";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = plugin;
@@ -329,10 +373,10 @@
 				CURRENT_PROJECT_VERSION = 1.0;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QC Utilities_Prefix.pch";
+				GCC_PREFIX_HEADER = "BW QC Utilities_Prefix.pch";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "/Library/Graphics/Quartz Composer Plug-Ins";
-				PRODUCT_NAME = "QC Utilities";
+				PRODUCT_NAME = "BW QC Utilities";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = plugin;
@@ -344,8 +388,9 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -354,7 +399,8 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				SDKROOT = macosx10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -383,7 +429,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "QC Utilities" */ = {
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "BW QC Utilities" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB913B08733D840010E9CD /* Debug */,
@@ -392,7 +438,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "QC Utilities" */ = {
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "BW QC Utilities" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB913F08733D840010E9CD /* Debug */,

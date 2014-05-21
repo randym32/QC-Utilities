@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:QC Utilities.xcodeproj">
+      location = "self:BW QC Utilities.xcodeproj">
    </FileRef>
 </Workspace>
