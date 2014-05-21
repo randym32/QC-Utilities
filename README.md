@@ -26,7 +26,9 @@ Lessons that I have learned
 8. If using Grand Central Dispatch (eg dispatch_async) *do not use 'dispatch_get_main_queue()'*.  Quartz Composer will stop responding -- with a spinning beach ball -- if that background task block takes any time to execute.  Use 'dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)' instead
 8. 'executionTimeForContext:atTime:withArguments:' is called very frequently, no matter what it returned last
 9. [NSURL URLWithString:] can return a NULL; so there is need to check for that and fall back to [NSURL fileURLWithPath:]
-
+10. If you tell Quartz Composer that your Structure output will be based on NSArray, anything you pass it will be converted to an NSArray.  The same for each of the things inside of what you pass it.   That is an NSDictionary will be converted into an NSArray.  If a value inside is an NSDictionary, the value will be converted to an NSArray.
+11. If you tell Quartz Composer that your Structure output will be based on NSDictionary, anything you pass it will be converted to an NSDictionary.  The same for each of the things inside of what you pass it.   That is an NSArray will be converted into an NSDictionary; the keys will be the array indices.  If a value inside is an NSArray, the value will be converted to an NSDictionary.
+12. Finder will put a lot error messages in the log; this appears to be quick look / preview feature but it has not loaded the plugin.
 
 
 Requirements
@@ -36,7 +38,14 @@ The plugin was created using the Xcode editor running under Mac OS X 10.8.x or l
 Patches
 ========
 
+|What|Patches|
+|---:|-------|
+|**Error Management**|Exception (Unhandled) Reporter, Host Reachability, Network Reachability, URL Parser|
+|**Network**   |String Import, URL Parser, WLANs, Network Reachability|
+|**Strings**   |Hex To Color, Is String Bound, String Import|
+|**Structures**|Is Structure Bound, Merge Structure, Thing Info, URL Structure|
 
+* *Cameras*: Provides a list of camera identifiers
 * *Exception (Unhandled) Reporter*: Captures errant UNIX signals and unhandled framework exceptions.
 * *Hex To Color*: Converts a hex string to a color.
 * *Host Reachability*: Checks to see if a host is reachable.
@@ -46,16 +55,10 @@ Patches
 * *Merge Structure*: Merges two structures
 * *Network Reachability*: Checks to see if the local network is reachable
 * *String Import*: Imports a structure from a JSON formatted file
+* *Thing Info*: Information about a thing, such as a camera or WLAN
 * *URL Parser*: Parse a URL into its parts
 * *WiFi Reachability*: Checks to see if the local WiFi network is reachable
-
-|What|Patches|
-|-:|-|
-|**Devices, Hardware**|Network Reachability|
-|**Error Management**|Exception (Unhandled) Reporter, Host Reachability, Network Reachability, URL Parser|
-|**Network**   |String Import, URL Parser|
-|**Strings**   |Hex To Color, Is String Bound, String Import|
-|**Structures**|Is Structure Bound, Merge Structure, URL Structure|
+* *WLANs*: Provides a list of WLAN interface (network adapter) identifiers
 
 
 Exception (Unhandled) Reporter
@@ -208,7 +211,6 @@ The structure of the URL includes:
 | Field                     | Description                 |
 |---------------------------|-----------------------------|
 | absolute                  |                             |
-| absolute URL              |                             |
 | base                      |                             |
 | fragment                  |                             |
 | host                      |                             |
@@ -238,23 +240,47 @@ Checks to see if a network is reachable.  See also *Host Reachability*, *Network
 
 
 
+Structures
+==========
 
 Error Structure
 ---------------
 
 The error structure may include the following fields (text borrowed from Apple Documentation):
 
-| Field                     | Description                 |
-|---------------------------|-----------------------------|
-|localizedDescription       |The primary user-presentable message for the error. In the absence of a custom error string, the manufactured one might not be suitable for presentation to the user, but can be used in logs or debugging.|
-|localizedFailureReason     |A complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).|
-|localizedRecoverySuggestion|The string that can be displayed as the "informative" (aka "secondary") message.|
-|localizedRecoveryOptions   |Titles of buttons that are appropriate for displaying in an alert. These should match the string provided as a part of localizedRecoverySuggestion.  The first string would be the title of the default option, the second one the next option, and so on.|
-| recoveryAttempter         | An object that conforms to the NSErrorRecoveryAttempting informal protocol.|
-|     helpAnchor            |The help anchor that can be used to create a help button to accompany the error when it's displayed to the user.|
+| Field            | Type  | Description                                                 |
+|------------------|:------|-------------------------------------------------------------|
+|description       |String |The primary user-presentable message for the error.  It is localized. In the absence of a custom error string, the manufactured one might not be suitable for presentation to the user, but can be used in logs or debugging.|
+|failureReason     |String |A complete sentence which describes why the operation failed. It is localized. In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).|
+|recoverySuggestion|String |The string that can be displayed as the "informative" (aka "secondary") message.  It is localized. |
+|recoveryOptions   |String |Titles of buttons that are appropriate for displaying in an alert.  It is localized.  These should match the string provided as a part of recoverySuggestion.  The first string would be the title of the default option, the second one the next option, and so on.|
+| recoveryAttempter|String | An object that conforms to the NSErrorRecoveryAttempting informal protocol.|
+|     helpAnchor   |String |The help anchor that can be used to create a help button to accompany the error when it's displayed to the user.|
 
 
 Note: This patch does not give a download progress indicator.  There are other JSON importers that do; this was
 kept simple.
 
+
+WLAN Info Structure
+-------------------
+
+| Field            | Type  | Description                                                         |
+|------------------|:------|---------------------------------------------------------------------|
+| type             |String | Always "wlan"                                                       |
+| active           |Boolean| True if the interface has its corresponding network service enabled.|
+| BSSID            |String | The current basic service set identifier (BSSID) for the interface. |
+| countryCode      |String | The current country code (ISO/IEC 3166-1:1997) for the interface.   |
+| deviceAttached   |Boolean| True if the interface has its corresponding hardware attached.      |
+| interfaceMode    |String | The current mode for the interface.                                 |
+| MAC              |String | The hardware media access control (MAC) address for the interface   |
+| noiseMeasurement |Number | The current aggregate noise measurement (dBm) for the interface.    |
+| phyMode          |String | The current active PHY mode(s) for the interface.                   |
+| powerEneabled    |Boolean| True if the interface power state is "On"                           |
+| RSSI             |Number | The current aggregate received signal strength indication (RSSI) measurement (dBm) for the interface.|
+| security         |String | The current security mode for the interface.                        |
+| SSID             |String | The current service set identifier (SSID) for the interface.        |
+| transmitPower    |Number | The current transmit power (mW) for the interface.                  |
+| transmitRate     |Number | The current transmit rate (Mbps) for the interface.                 |
+| WLAN id          |String | The internal BSD name                                               |
 
